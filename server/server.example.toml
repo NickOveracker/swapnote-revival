@@ -1,0 +1,52 @@
+# Swapnote server configuration. Copy to server.toml (or /etc/swapnote/server.toml) and
+# edit. Run: python3 hpp_server.py server.toml
+
+[server]
+# Address to listen on. Use the server's Tailscale address (100.x.y.z) so only your
+# tailnet can reach it, a LAN address for home-only use, or 0.0.0.0 for all interfaces.
+bind = "127.0.0.1"
+port = 8080
+# Where notes and the database are kept. The service user must be able to write here.
+data = "/var/lib/swapnote"
+# The exact --server name you built the 3DS patches with (see docs/SETUP.md).
+# Requests for this name and its subdomains (hpp-00051600-l1.<name>) are served here.
+server_name = "swapnote.home.arpa"
+
+[access]
+# Friend PIDs of the consoles allowed to send and receive notes. Find them in the log:
+# refused consoles are logged as "refused console with friend PID ...".
+# Empty = any console that can reach the server (not recommended).
+allowed_pids = []
+# Client addresses allowed to connect at all (CIDR). Tailscale uses 100.64.0.0/10.
+# Empty = anyone who can reach the bind address.
+allowed_networks = ["100.64.0.0/10", "127.0.0.0/8", "192.168.0.0/16", "10.0.0.0/8"]
+
+[retention]
+# Note data is deleted this long after every recipient has fetched it (time for retries)...
+delivered_grace_hours = 24
+# ...and in any case after this many days, delivered or not.
+max_age_days = 30
+
+[proxy]
+# Act as the HTTP proxy the consoles use (directly, or via the relay in relay/).
+# The 3DS sends all of its HTTP(S) traffic through its proxy setting, so other hosts
+# must be passed through for the rest of the console to keep working.
+enabled = true
+# Hosts the proxy will pass through (shell-style patterns). Everything else is refused.
+allow_hosts = [
+    "conntest.nintendowifi.net",   # the console's connection test
+    "*.nintendowifi.net",
+    "*.nintendo.net",
+    "*.pretendo.cc",
+    "*.pretendo.network",
+]
+# Optional Basic authentication for proxy requests (also enter these in the 3DS proxy
+# settings, or in the relay's upstream setting). Leave empty to disable.
+username = ""
+password = ""
+
+[debug]
+# Store every raw request (INCLUDING NOTE CONTENTS) in the database. Debugging only.
+log_requests = false
+# Log every request and proxied destination.
+verbose = false

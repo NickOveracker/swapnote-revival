@@ -1,0 +1,16 @@
+# build output and local environments
+build/
+.venv/
+__pycache__/
+*.pyc
+
+# never commit game/system files, dumps or private config
+*.cia
+*.3ds
+*.cxi
+*.app
+code.bin
+*.dec.code
+*.dmp
+server.toml
+data/

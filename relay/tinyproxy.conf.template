@@ -1,0 +1,25 @@
+# tinyproxy configuration for the Swapnote relay (written by relay/setup.sh).
+# The 3DS uses this Pi as its HTTP proxy; every request is sent on, through Tailscale,
+# to the Swapnote server's proxy port.
+User tinyproxy
+Group tinyproxy
+Port 8080
+Timeout 120
+LogLevel Warning
+MaxClients 20
+
+# Only devices on the local network may use the relay.
+Allow 127.0.0.1
+Allow LAN_SUBNET
+
+# Optional password the 3DS must send (System Settings -> proxy -> authentication).
+RELAY_AUTH
+
+# Forward everything to the Swapnote server over the tailnet. The server answers its own
+# name and passes through only the hosts in its [proxy] allow_hosts.
+Upstream http UPSTREAM_AUTHSERVER_TAILNET_ADDRESS:SERVER_PORT
+
+# Plain HTTP and HTTPS (CONNECT) on the usual ports.
+ConnectPort 443
+ConnectPort 80
+DisableViaHeader Yes

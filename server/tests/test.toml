@@ -1,0 +1,14 @@
+# Configuration used by tests/flow_test.py (run_tests.sh fills in the data directory).
+[server]
+bind = "127.0.0.1"
+port = 18080
+data = "DATA_DIR"
+server_name = "test.invalid"
+
+[access]
+allowed_pids = [1111111111, 2222222222, 3333333333]
+allowed_networks = ["127.0.0.0/8"]
+
+[proxy]
+enabled = true
+allow_hosts = ["*.nintendowifi.net"]

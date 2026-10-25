@@ -1,0 +1,38 @@
+# systemd unit for the Swapnote server. Install (as root):
+#   useradd --system --home /var/lib/swapnote --shell /usr/sbin/nologin swapnote
+#   install -d -o swapnote -g swapnote -m 700 /var/lib/swapnote
+#   install -d -m 755 /opt/swapnote /etc/swapnote
+#   cp -r server/* /opt/swapnote/ && cp server.toml /etc/swapnote/server.toml
+#   cp swapnote-server.service /etc/systemd/system/ && systemctl enable --now swapnote-server
+[Unit]
+Description=Swapnote SpotPass revival server
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+User=swapnote
+Group=swapnote
+ExecStart=/usr/bin/python3 -I /opt/swapnote/hpp_server.py /etc/swapnote/server.toml
+Restart=on-failure
+RestartSec=5
+
+# Hardening: the service can only write its data directory.
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ReadWritePaths=/var/lib/swapnote
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6
+RestrictNamespaces=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

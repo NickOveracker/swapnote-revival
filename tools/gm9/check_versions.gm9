@@ -1,0 +1,23 @@
+# Swapnote revival: check that this console has the exact versions the patches target.
+# Run in GodMode9 (HOME -> Scripts). Read-only: it only extracts copies to the SD card
+# and deletes them again.
+#   - Swapnote US v3.3.0 (0004000000051700)
+#   - BOSS system module from system update 11.17.0 (0004013000003402)
+
+set OUT $[GM9OUT]/swapnote-check
+mkdir $[OUT]
+
+set ERRORMSG "Swapnote (US) is not installed on this console's SD card."
+find A:/title/00040000/00051700/content/00000000.app APP
+extrcode $[APP] $[OUT]/swapnote.code
+set ERRORMSG "Swapnote is not the US v3.3.0 version - the patch does not support it. Nothing was changed."
+sha $[OUT]/swapnote.code 83f38eab63efa6ed7d5cf7feb1977bda4a2005b17c61fcea57552bcaf84ac108
+
+set ERRORMSG "Could not read the BOSS system module."
+find 1:/title/00040130/00003402/content/*.app APP
+extrcode $[APP] $[OUT]/boss.code
+set ERRORMSG "System version is not 11.17.0 - update the console in System Settings first. Nothing was changed."
+sha $[OUT]/boss.code 0243e1dfe80fb477fd77b21a509f346f5434bf667ff28b927779b640053ec434
+
+rm $[OUT]
+set SUCCESSMSG "OK: Swapnote US v3.3.0 and system 11.17.0 - the patches match this console."
