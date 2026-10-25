@@ -1,3 +1,4 @@
+@ SPDX-License-Identifier: GPL-3.0-or-later
 @ BOSS patch 01 — send HPP (SpotPass DataStore) requests to our own server over HTTP
 @
 @ Target: BOSS system module 0004013000003402, TMD version 14337 (system 11.17.0).

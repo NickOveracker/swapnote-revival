@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Swapnote revival: check that this console has the exact versions the patches target.
 # Run in GodMode9 (HOME -> Scripts). Read-only: it only extracts copies to the SD card
 # and deletes them again.

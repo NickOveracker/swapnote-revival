@@ -1,3 +1,4 @@
+@ SPDX-License-Identifier: GPL-3.0-or-later
 @ Patch 03 — L / R buttons change the ink colour while writing a note
 @
 @ Background

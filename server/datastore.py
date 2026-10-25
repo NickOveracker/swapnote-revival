@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """DataStore protocol (NEX protocol 0x73) handlers and note storage.
 
 BOSS (NEX 2.4.1) uses the V1 methods. Flow of a friend note (confirmed on hardware;

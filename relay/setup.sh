@@ -1,4 +1,5 @@
 #!/bin/bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Swapnote relay setup for a Raspberry Pi (Raspberry Pi OS Lite, Debian 12+), run as root:
 #   sudo ./setup.sh --server-ip 100.x.y.z [--server-port 8080] [--authkey tskey-...]
 #                   [--relay-user U --relay-pass P] [--upstream-user U --upstream-pass P]

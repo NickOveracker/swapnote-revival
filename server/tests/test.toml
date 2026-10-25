@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Configuration used by tests/flow_test.py (run_tests.sh fills in the data directory).
 [server]
 bind = "127.0.0.1"

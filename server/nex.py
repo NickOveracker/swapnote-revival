@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Minimal NEX encoding helpers (little-endian) for the HPP DataStore server.
 
 Only what Swapnote's SpotPass tasks need. NEX version here is 2.4.1, which predates

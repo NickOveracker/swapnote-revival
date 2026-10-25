@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Build Luma3DS code.ips files from the commented assembly sources in patches/.
 
 Layout: one folder per patched title, named <TitleID>-<name>, e.g.

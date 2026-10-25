@@ -1,3 +1,4 @@
+@ SPDX-License-Identifier: GPL-3.0-or-later
 @ Patch 04 — all built-in stationery available from the start
 @
 @ Background

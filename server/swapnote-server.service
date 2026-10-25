@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # systemd unit for the Swapnote server. Install (as root):
 #   useradd --system --home /var/lib/swapnote --shell /usr/sbin/nologin swapnote
 #   install -d -o swapnote -g swapnote -m 700 /var/lib/swapnote

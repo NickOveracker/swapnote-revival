@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # tinyproxy configuration for the Swapnote relay (written by relay/setup.sh).
 # The 3DS uses this Pi as its HTTP proxy; every request is sent on, through Tailscale,
 # to the Swapnote server's proxy port.

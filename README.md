@@ -69,6 +69,12 @@ See [docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md) for the reverse-engineering det
 - the policy list;
 - the server protocol.
 
+## License
+
+[GPL-3.0-or-later](LICENSE). You may use, share and modify this project. If you
+distribute modified versions, they must also be released under the GPL with their source
+code.
+
 ## Credits
 
 The protocol work relied on public research by:

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Self-hosted HPP (NEX over HTTP) DataStore server for Swapnote friend notes.
 
 The 3DS BOSS (SpotPass) module, patched by patches/0004013000003402-boss, sends

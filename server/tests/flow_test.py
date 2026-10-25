@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """End-to-end test: fake a sender and a recipient console against a running server.
 
 Expects the server to run with tests/test.toml (allowed PIDs 1111111111 and 2222222222).

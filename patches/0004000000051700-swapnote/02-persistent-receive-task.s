@@ -1,3 +1,4 @@
+@ SPDX-License-Identifier: GPL-3.0-or-later
 @ Patch 02 — make the "receive friend notes" SpotPass task run without a run limit
 @
 @ Background

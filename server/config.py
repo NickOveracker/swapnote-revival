@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Server configuration (TOML file, Python 3.11+ standard library only).
 
 See server.example.toml for every option and its meaning.

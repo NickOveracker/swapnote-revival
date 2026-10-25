@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Swapnote server configuration. Copy to server.toml (or /etc/swapnote/server.toml) and
 # edit. Run: python3 hpp_server.py server.toml
 

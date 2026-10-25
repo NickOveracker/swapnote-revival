@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """SpotPass policy list served to consoles patched with BOSS patch 02.
 
 BOSS fetches GET /p01/policylist/<majorVersion>/<country>[?ap=...] and stops every task

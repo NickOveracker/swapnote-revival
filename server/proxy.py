@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Optional HTTP proxy mode, so a 3DS can point its proxy setting at this server
 (directly, or through a relay such as the Raspberry Pi in relay/).
 

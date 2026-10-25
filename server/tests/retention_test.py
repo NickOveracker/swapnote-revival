@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Retention: delivered notes are deleted after the grace period, old notes after
 max_age_days, unfinished uploads after a few hours; IDs keep increasing afterwards."""
 import json

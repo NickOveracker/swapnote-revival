@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Start a throwaway server with tests/test.toml, run the flow test, stop the server.
 set -e
 cd "$(dirname "$0")"

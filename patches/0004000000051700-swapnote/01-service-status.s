@@ -1,3 +1,4 @@
+@ SPDX-License-Identifier: GPL-3.0-or-later
 @ Patch 01 — report the SpotPass service as available (removes the 2013 kill switch)
 @
 @ Background
